@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini E-Commerce</title>
+    <!-- Inclusão do Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="container mt-4">
+        <h1 class="text-center">MiniShop API</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Loja</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item" id="menu-usuario">
+                        <!-- Será preenchido dinamicamente -->
+                    </li>                    
+                    <li><span class="nav-link">|</span></li>
+                    <li class="nav-item" id="menu-admin" style="display: none;">
+                        <a class="nav-link" href="admin.html">Painel Admin</a>
+                    </li>
+                    <li class="nav-item" id="menu-admin_fil" style="display: none;">
+                        <span class="nav-link">|</span>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#carrinho">Carrinho (<span id="carrinho-contador">0</span>)</a>
+                        <a class="nav-link btn btn-sm btn-outline-danger" href="#" id="btn-logout-loja">Sair</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container mt-5">
+        <!-- Seção de Produtos -->
+        <section id="produtos" class="row">
+            <h2 class="col-12 text-center mb-4">Catálogo de Produtos</h2>
+            <!-- JavaScript -->
+        </section>
+
+        <hr class="my-5">
+
+        <section id="carrinho">
+            <h2 class="text-center mb-4">Carrinho de Compras</h2>
+            <ul id="carrinho-lista" class="list-group">
+                <!-- JavaScript -->
+            </ul>
+            <div class="d-flex justify-content-end align-items-center mt-3">
+                <p class="h4 font-weight-bold mb-0 mr-3">Total: R$ <span id="total-carrinho">0.00</span></p>
+                <button id="finalizar-compra" class="btn btn-success" disabled>Finalizar Compra</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="container text-center mt-5 py-3 bg-light">
+        <p>&copy; 2025 Mini E-Commerce. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Includes -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Includes -->
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
