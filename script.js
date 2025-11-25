@@ -84,10 +84,7 @@ function renderizarProdutos(produtos) {
 }
 
 // GET:  chamada /produtos
-function carregarProdutos() {
-
-    console.log('Simulando chamada GET para /produtos...');
-    
+function carregarProdutos() {  
 
         $.ajax({
         url: PRODUTOS_ENDPOINT,
@@ -96,8 +93,14 @@ function carregarProdutos() {
         success: function(data) {
 
             const produtosComImagensRandom = data.map(produto => ({
-                ...produto, // Mantém todas as propriedades existentes
-                imagem: gerarUrlImagemAleatoria(produto.id) // Substitui a imagem
+                ...(produto.imagem === null ? {
+                // ...retorne um novo objeto com a nova imagem e o restante do produto
+                ...produto,
+                imagem: gerarUrlImagemAleatoria(produto.id)
+                } : {
+                // ...caso contrário, retorne o produto original
+                ...produto
+                })
             }));
 
             console.log('Produtos carregados:', produtosComImagensRandom);

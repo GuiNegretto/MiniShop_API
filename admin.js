@@ -57,8 +57,8 @@ function renderizarTabelaProdutos(produtos) {
     }
 
     produtos.forEach(produto => {
-        //const imagemUrl = produto.imagem || `https://picsum.photos/80/60?random=${produto.id}`;
-        const imagemUrl = `https://picsum.photos/80/60?random=${produto.id}`;
+        const imagemUrl = produto.imagem || `https://picsum.photos/80/60?random=${produto.id}`;
+        //const imagemUrl = `https://picsum.photos/80/60?random=${produto.id}`;
         const linha = `
             <tr>
                 <td>${produto.id}</td>
