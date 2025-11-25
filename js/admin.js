@@ -29,6 +29,7 @@ $(document).ready(function() {
 
 const MOCKAPI_BASE_URL = "https://690a89a81a446bb9cc22d695.mockapi.io";
 const PRODUTOS_ENDPOINT = `${MOCKAPI_BASE_URL}/produtos`;
+const CART_ENDPOINT = `${MOCKAPI_BASE_URL}/cart`;
 
 // Carregar produtos na tabela
 function carregarProdutosAdmin() {
@@ -176,6 +177,7 @@ function editarProduto(id) {
     });
 }
 
+// Excluir produto
 function excluirProduto(id) {
     if (!confirm('Tem certeza que deseja excluir este produto?')) {
         return;
