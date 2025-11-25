@@ -176,38 +176,17 @@ function editarProduto(id) {
     });
 }
 
-// Excluir produto
 function excluirProduto(id) {
     if (!confirm('Tem certeza que deseja excluir este produto?')) {
         return;
     }
 
-    $.ajax({
-        url: `${PRODUTOS_ENDPOINT}/${id}`,
-        method: 'DELETE',
-        success: function() {
-            console.log('Produto excluído:', id);
-            alert('Produto excluído com sucesso!');
-            carregarProdutosAdmin();
-        },
-        error: function(xhr, status, error) {
-            console.error('Erro ao excluir produto:', status, error);
-            alert('Erro ao excluir produto.');
-        }
-    });
-}
-
-function excluirProduto(id) {
-    if (!confirm('Tem certeza que deseja excluir este produto?')) {
-        return;
-    }
-    
     $.ajax({
         url: `${CART_ENDPOINT}`,
         method: 'GET',
         success: function(carrinho) {
 
-            const existeNoCarrinho = carrinho.some(item => item.produtoId == id);
+            const existeNoCarrinho = carrinho.some(item => String(item.produtoId) == String(id));
 
             if (existeNoCarrinho) {
                 alert('Este produto não pode ser excluído porque está presente no carrinho de um usuário.');
